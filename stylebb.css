@@ -19,7 +19,7 @@ nav {
         position: fixed;
         list-style: none;
         width: 200px;
-        background-color: rgb(255, 255, 255);
+        background-color: rgb(255, 255, 255, 0);
         height: 100vh;
         padding: 10px 0;
         box-sizing: border-box;
