@@ -209,6 +209,8 @@ nav {
 .modlist {
   list-style: none;
   padding-left: 0;
+  font-size: 10px;
+  margin-left: 40px;
 }
 
 .modlist > li {
@@ -216,7 +218,7 @@ nav {
 }
 
 .modlist .headinglist {
-  font-weight: bold;
+  font-weight: semi-bold;
   display: block;
   margin-bottom: 0.3em;
 }
