@@ -217,6 +217,11 @@ nav {
   margin-top: 1em;
 }
 
+.modlist ul li {
+  font-style: italic;
+  font-size: 12px;
+}
+
 .modlist .headinglist {
   font-weight: 600px;
   display: block;
