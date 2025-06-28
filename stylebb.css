@@ -194,11 +194,11 @@ nav {
 
 .top-right-title {
         position: fixed;
-        top: 100 px;
-        left: 10 px;
+        top: 100px;
+        left: 10px;
         font-family: 'General Sans', sans-serif;
         font-weight: 700;
-        font-size: 40 px;
+        font-size: 40px;
         color: #000;
         z-index: 1000;
 }
