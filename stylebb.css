@@ -1,3 +1,13 @@
+.top-right-title {
+        position: fixed;
+        top: 100px;
+        left: 10px;
+        font-family: 'General Sans', sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        color: #000;
+        z-index: 1000;
+}
 
 body {
         margin: 0;
@@ -192,13 +202,3 @@ nav {
         margin-right: 650px;
 }
 
-.top-right-title {
-        position: fixed;
-        top: 100px;
-        left: 10px;
-        font-family: 'General Sans', sans-serif;
-        font-weight: 700;
-        font-size: 40px;
-        color: #000;
-        z-index: 1000;
-}
