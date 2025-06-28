@@ -222,7 +222,7 @@ nav {
 }
 
 .modlist ul {
-  list-style-type: disc;
+  list-style-type: none;
   padding-left: 1.5em;
 }
 
