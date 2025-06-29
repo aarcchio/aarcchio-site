@@ -85,6 +85,63 @@ Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapi
     </ul>
   </li>
 </ul>
+        <div class="gallery">
+  <div class="gallery-item">
+    <img src="/photos/gallery/Screenshot 2025-02-08 171746.png" alt="Photo 1" onclick="openLightbox(this)">
+  </div>
+  <div class="gallery-item">
+    <img src="/photos/gallery/Screenshot 2025-02-08 172319.png" alt="Photo 2" onclick="openLightbox(this)">
+  </div>
+  <div class="gallery-item">
+    <img src="/photos/gallery/Screenshot 2025-02-08 173851.png" alt="Photo 3" onclick="openLightbox(this)">
+  </div>
+  <div class="gallery-item">
+    <img src="/photos/gallery/Screenshot 2025-02-08 180134.png" alt="Photo 4" onclick="openLightbox(this)">
+  </div>
+</div>
+
+<div id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-content">
+    <button id="prev" onclick="prevImage(event)">‹</button>
+    <img id="lightbox-img" src="" alt="Expanded image">
+    <button id="next" onclick="nextImage(event)">›</button>
+  </div>
+</div>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let currentIndex = 0;
+  const images = [...document.querySelectorAll('.gallery-item img')];
+
+  window.openLightbox = function(img) {
+    currentIndex = images.indexOf(img);
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = img.src;
+    lightbox.classList.add('show');
+  };
+
+  window.closeLightbox = function(event) {
+    if(event.target.id === 'prev' || event.target.id === 'next') return;
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.remove('show');
+  };
+
+  window.prevImage = function(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex].src;
+  };
+
+  window.nextImage = function(event) {
+    event.stopPropagation();
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById('lightbox-img').src = images[currentIndex].src;
+  };
+});
+</script>
+
         
     </main>
 
