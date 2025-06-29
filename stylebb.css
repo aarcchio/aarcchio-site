@@ -306,7 +306,6 @@ nav {
   align-items: center;
   cursor: pointer;
   z-index: 9999;
-  object-fit: contain;
 }
 
 #lightbox img {
