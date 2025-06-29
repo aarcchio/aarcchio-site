@@ -272,6 +272,9 @@ nav {
   aspect-ratio: 4 / 5;       
   overflow: hidden;          
   border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .gallery img {
