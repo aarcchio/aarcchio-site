@@ -290,12 +290,14 @@ nav {
 }
 
 #lightbox {
-   opacity: 0;
-   transition: 0.3s;
+  opacity: 0;
+  transition: 0.3s;
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
+  top: 0; left: 0;\
+  max-width: 90vw; 
+  max-height: 80vh;
+  width: auto;
+  height: auto;
   background: rgba(0,0,0,0.8);
   display: flex; 
   pointer-events: none;         
@@ -303,6 +305,7 @@ nav {
   align-items: center;
   cursor: pointer;
   z-index: 9999;
+  object-fit: contain;
 }
 
 #lightbox img {
