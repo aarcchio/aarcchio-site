@@ -296,11 +296,9 @@ nav {
   opacity: 0;
   transition: 0.3s;
   position: fixed;
-  top: 0; left: 0;\
-  max-width: 90vw; 
-  max-height: 80vh;
-  width: auto;
-  height: auto;
+  top: 0; left: 0;
+  max-width: 100vw; 
+  max-height: 100vh;
   background: rgba(0,0,0,0.8);
   display: flex; 
   pointer-events: none;         
@@ -312,14 +310,13 @@ nav {
 }
 
 #lightbox img {
-  max-height: 90vh;
-  max-width: 90vw;
-  max-width: auto;
-  max-height: auto;
+  width: 600px; 
+  height: auto;
   border-radius: 8px;
-  box-shadow: none;
   object-fit: contain;
-  width: 600px;
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: none;
 }
 
 
@@ -350,8 +347,8 @@ nav {
   padding: 0 15px;
   cursor: pointer;
   user-select: none;
-  z-index: 10000;
   border-radius: 5px;
+  z-index: 10000;
 }
 
 #prev:hover, #next:hover {
@@ -359,9 +356,9 @@ nav {
 }
 
 #prev {
-  left: 520px;
+  left: auto;
 }
 
 #next {
-  right: 500px;
+  right: auto;
 }
