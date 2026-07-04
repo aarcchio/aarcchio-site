@@ -11,6 +11,26 @@
     title.appendChild(link);
   }
 
+  if (!document.querySelector(".scroll-progress")) {
+    const progress = document.createElement("div");
+    const bar = document.createElement("span");
+
+    progress.className = "scroll-progress";
+    bar.className = "scroll-progress__bar";
+    progress.appendChild(bar);
+    document.body.appendChild(progress);
+
+    function updateScrollProgress() {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progressAmount = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+      bar.style.height = `${Math.min(100, Math.max(0, progressAmount))}%`;
+    }
+
+    updateScrollProgress();
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+    window.addEventListener("resize", updateScrollProgress);
+  }
+
   document.addEventListener("click", (event) => {
     const toggle = event.target.closest(".sidebar-toggle");
     const sidebarLink = event.target.closest(".sidebar a");

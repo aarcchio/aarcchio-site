@@ -9,7 +9,8 @@
 </head>
 <body>
    <div id="sidebar-placeholder"></div>
-   <a class="top-right-title" href="../index.html">Aarcchio</a>
+    <div class="top-right-title">Aarcchio</div>
+   <a class="top-right-title" href="index.html">Aarcchio</a>
 
 <script>
   fetch("sidebar.html")
@@ -18,5 +19,34 @@
       document.getElementById("sidebar-placeholder").innerHTML = data;
     });
 </script>
+    <main class="content2 architecture-index">
+        <section class="project-tile-list" aria-label="Architecture projects">
+          <a class="project-tile" href="Architecture-sublinks/rrr.html">
+                <p class="project-tile__meta">Thesis Project | RMIT Masters of Architecture | Supervisor: Adam Pustola</p>
+                <h1 class="project-tile__title">BIG Conditions</h1>
+                <p class="project-tile__subtitle">Tooronga 3146 Precinct</p>
+                <img class="project-tile__image" src="photos/BIGConditions/RENDERS/fniished 2.jpg" alt="Axonometric drawing for Repair, Retain, Reinvest">
+            </a>
+             <a class="project-tile" href="Architecture-sublinks/rrr.html">
+                <p class="project-tile__meta">Semester Two 2025 | RMIT Masters of Architecture | Tutor: Vicky Lam</p>
+                <h1 class="project-tile__title">Block Party</h1>
+                <p class="project-tile__subtitle">61 Church St. Abbotsford 3067</p>
+                <img class="project-tile__image" src="photos/Block Party/civic revise.jpg" alt="Axonometric drawing for Repair, Retain, Reinvest">
+            </a>
+            <a class="project-tile" href="Architecture-sublinks/rrr.html">
+                <p class="project-tile__meta">Semester One 2025 | RMIT Masters of Architecture | Tutors: Simon Robinons and Steve Mintern</p>
+                <h1 class="project-tile__title">Repair, Retain, Reinvest</h1>
+                <p class="project-tile__subtitle">351 Barkley Street, Collingwood 3066</p>
+                <img class="project-tile__image" src="photos/RRR/axo.jpg" alt="Axonometric drawing for Repair, Retain, Reinvest">
+            </a>
+            <a class="project-tile" href="Architecture-sublinks/Titehaus.html">
+                <p class="project-tile__meta">Semester Two 2024 | RMIT Masters of Architecture | Tutors: Graham Crist, Emma Donovan and Jimi Chakma</p>
+                <h1 class="project-tile__title">Tite Haus</h1>
+                <p class="project-tile__subtitle">Toombah St, Mount Waverley VIC 3149</p>
+                <img class="project-tile__image" src="photos/Tite Haus/RENO3.jpg" alt="Architectural drawing preview for Tite Haus">
+            </a>
+        </section>
+    </main>
+  <script src="site-ui.js"></script>
 </body>
 </html>

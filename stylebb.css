@@ -26,6 +26,24 @@ body {
   background: #fff;
 }
 
+.scroll-progress {
+  position: fixed;
+  right: clamp(0.35rem, 0.8vw, 0.75rem);
+  top: clamp(0.75rem, 2vh, 1rem);
+  bottom: clamp(0.75rem, 2vh, 1rem);
+  z-index: 1200;
+  width: 0.1875rem;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.scroll-progress__bar {
+  display: block;
+  width: 100%;
+  height: 0%;
+  background: rgba(0, 0, 0, 0.65);
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -226,6 +244,79 @@ a.top-right-title:focus-visible {
   line-height: 1.25;
 }
 
+.home-content {
+  min-height: auto;
+  padding-top: clamp(6rem, 18vh, 12rem);
+  padding-bottom: clamp(4rem, 8vw, 8rem);
+}
+
+.architecture-index {
+  padding-top: clamp(2rem, 5vw, 3.125rem);
+}
+
+.project-tile-list {
+  display: grid;
+  width: min(100%, var(--image-max));
+  margin-top: 0;
+  gap: clamp(4rem, 9vw, 7rem);
+}
+
+.project-tile {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.project-tile + .project-tile {
+  border-top: 0.0625rem solid rgba(0, 0, 0, 0.16);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.project-tile:hover .project-tile__image,
+.project-tile:focus-visible .project-tile__image {
+  opacity: 0.82;
+}
+
+.project-tile:hover,
+.project-tile:focus-visible {
+  color: #777;
+}
+
+.project-tile:focus-visible {
+  outline: 0.125rem solid #000;
+  outline-offset: 0.5rem;
+}
+
+.project-tile__meta {
+  width: min(100%, var(--image-max));
+  margin-bottom: clamp(1rem, 2vw, 1.75rem);
+  font-size: clamp(0.7rem, 0.82vw, 0.875rem);
+  line-height: 1.35;
+}
+
+.project-tile__title {
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: clamp(3rem, 7.5vw, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+
+.project-tile__subtitle {
+  margin-bottom: clamp(2rem, 4vw, 4rem);
+  font-size: clamp(0.75rem, 0.9vw, 0.9375rem);
+  line-height: 1.3;
+}
+
+.project-tile__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.2s ease;
+}
+
 .content2 {
   display: flex;
   padding-top: clamp(2rem, 5vw, 3.125rem);
@@ -287,6 +378,31 @@ a.top-right-title:focus-visible {
 
 .project-image--portrait {
   width: min(70%, 38.25rem);
+}
+
+.project-image-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--image-grid-columns, 2), minmax(0, 1fr));
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  width: min(100%, var(--image-max));
+  margin-top: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+
+.project-image-grid__figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.project-image-grid__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.project-image-grid__caption {
+  width: 100%;
 }
 
 .project-carousel {
@@ -975,8 +1091,29 @@ a.top-right-title:focus-visible {
     font-size: clamp(2.75rem, 15vw, 5rem);
   }
 
+  .home-content {
+    padding-top: clamp(5rem, 18vh, 8rem);
+  }
+
+  .project-tile-list {
+    margin-top: clamp(4rem, 14vw, 6rem);
+    gap: clamp(3rem, 12vw, 5rem);
+  }
+
+  .project-tile__title {
+    font-size: clamp(2.5rem, 14vw, 4.5rem);
+  }
+
+  .project-tile__subtitle {
+    margin-bottom: clamp(1.5rem, 7vw, 2.5rem);
+  }
+
   .project-image--portrait {
     width: min(88%, 38.25rem);
+  }
+
+  .project-image-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .project-media-grid {
@@ -1062,9 +1199,26 @@ a.top-right-title:focus-visible {
   }
 }
 
+@media (max-width: 26rem) {
+  .project-image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Footer override: keeps Back to top aligned with the image column, not fixed to the viewport. */
 .project-footer {
   display: flex !important;
   width: min(100%, var(--image-max)) !important;
   margin-top: clamp(2rem, 4vw, 4rem) !important;
   align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.project-footer .back-to-top {
+  position: static !important;
+  inset: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+  text-align: right !important;
+  white-space: nowrap !important;
+}
